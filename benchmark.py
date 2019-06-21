@@ -1,3 +1,13 @@
 from itertools import combinations_with_replacement as cwr
 
-print(list(cwr('123456789',5))[0][1])
+benchmark = [
+    "is",
+    "mg",
+    "ep",
+    "cg",
+    "ft",
+    "bt",
+    "sp",
+    "lu",
+]
+print(list(cwr(benchmark,12)))
