@@ -1,0 +1,12 @@
+checkpoint
+model.ckpt.data-00000-of-00001
+model.ckpt.index
+model.ckpt.meta
+out.txt
+test.ckpt.data-00000-of-00001
+test.ckpt.index
+test.ckpt.meta
+test1.ckpt.data-00000-of-00001
+test1.ckpt.index
+test1.ckpt.meta
+.vscode/
