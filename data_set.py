@@ -68,7 +68,7 @@ for i in range(data_num):
             x=[]
         
     print(x)
-    file_num = power_out[-1].replace("")
+    file_num = power_out[-1].replace(",", "")
 
 
     #Start indexing for power

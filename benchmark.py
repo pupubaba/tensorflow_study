@@ -9,5 +9,13 @@ benchmark = [
     "bt",
     "sp",
     "lu",
+    "dt",
 ]
-print(list(cwr(benchmark,12)))
+thead_num = 7
+sum = []
+total = 0
+for i in range(thead_num):
+    sum += list(cwr(benchmark,i+1))
+    total += len(list(cwr(benchmark,i+1)))
+for i in range(1):
+    print(total)

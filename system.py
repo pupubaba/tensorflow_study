@@ -1,5 +1,5 @@
-import os
+import sys
 
-myCmd = 'ls > out.txt'
+node = sys.argv[1].split(".")[-1]
 
-os.system(myCmd)
+print(node)
