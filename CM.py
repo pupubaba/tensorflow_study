@@ -31,7 +31,8 @@ event_file = """#!/bin/bash
 
 # Launch MPI-based executable
 
-perf stat -I 500 -e INST_RETIRED.ANY,CPU_CLK_UNHALTED.THREAD_ANY,UOPS_ISSUED.ANY,RESOURCE_STALLS.ANY,BR_MISP_RETIRED.ALL_BRANCHES,BR_INST_RETIRED.ALL_BRANCHES,FP_ARITH_INST_RETIRED.128B_PACKED_DOUBLE,FP_ARITH_INST_RETIRED.128B_PACKED_SINGLE,FP_ARITH_INST_RETIRED.256B_PACKED_DOUBLE,FP_ARITH_INST_RETIRED.256B_PACKED_SINGLE,FP_ARITH_INST_RETIRED.SCALAR_DOUBLE,FP_ARITH_INST_RETIRED.SCALAR_SINGLE,MEM_LOAD_RETIRED.L1_HIT,L1-dcache-load-misses,LLC-loads,LLC-load-misses prun NPB3.3.1/NPB3.3-MPI/bin/is.B.8 prun NPB3.3.1/NPB3.3-MPI/bin/""".format(thead_num=thead_num)
+perf stat -I 500 -e INST_RETIRED.ANY,CPU_CLK_UNHALTED.THREAD_ANY,UOPS_ISSUED.ANY,RESOURCE_STALLS.ANY,BR_MISP_RETIRED.ALL_BRANCHES,BR_INST_RETIRED.ALL_BRANCHES,FP_ARITH_INST_RETIRED.128B_PACKED_DOUBLE,FP_ARITH_INST_RETIRED.128B_PACKED_SINGLE,FP_ARITH_INST_RETIRED.256B_PACKED_DOUBLE,FP_ARITH_INST_RETIRED.256B_PACKED_SINGLE,FP_ARITH_INST_RETIRED.SCALAR_DOUBLE,FP_ARITH_INST_RETIRED.SCALAR_SINGLE,MEM_LOAD_RETIRED.L1_HIT,L1-dcache-load-misses,LLC-loads,LLC-load-misses 
+ prun NPB3.3.1/NPB3.3-MPI/bin/""".format(thead_num=thead_num)
 
 f = open("test.mpi","w")
 f.write(event_file+sys.argv[1])
@@ -46,5 +47,5 @@ if __name__ == '__main__':
 file_num = event_out[-1].replace(",", "")
 
 if __name__ == '__main__':
-    proc = subprocess.Popen(["python", "CMP.py", file_num, sys.argv[1]], stdout=subprocess.PIPE)
+    proc = subprocess.Popen(["python", "CMP.py", file_num, sys.argv[1], sys.argv[2]], stdout=subprocess.PIPE)
     print(proc.stdout.readline())
